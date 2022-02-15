@@ -1,5 +1,27 @@
 # Connectr frontend tech test
 
+This repo is a basic react app put together with [Vite](https://vitejs.dev/).
+
+At Connectr we use:
+
+- React
+- Styled components
+- Apollo
+- Formik
+- Cypress
+
+Please see this as a potential starting point to your tech test solution but if you feel more more comfortable with another approach / tech stack use that instead. NextJs, Angular, Vue etc.
+You will be judged on the acceptance criteria not on the use of a particular framework / library.
+
+To start the project:
+
+`yarn start`
+
+or
+
+`npm run start`
+
+
 ## About us 👋
 
 Connectr, our onboarding platform, uses a combination of content, quiz-style self assessment and personalisation to help our clients find top talent and our users find great employers. We have big plans for Connectr and are currently building a new version with a shiny new front end. This test is designed to assess the skills we use everyday.
