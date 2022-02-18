@@ -54,7 +54,6 @@ how any missing requirements could be met.
 ## Constraints 🔎
 
 - Cards played by either the user or computer should not have been played before.
-- Cards played by either the user or computer should not have been "won" by either player i.e. the computer should not play a card that has been won by the user in a previous round.
 - On mobile devices the cards should stack. On tablet devices the cards should be displayed side by side. When the screen width grows very large a margin should appear either side so that the boxes don’t keep getting larger.
 - If there is any information that you feel is missing from the story then please make sensible decisions (for example, size of ‘mobile’, design of ‘highlighted’)- It is ok to use Create React App to get started. Use your judgement on look and feel but it should be easy to use.
 
