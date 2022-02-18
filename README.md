@@ -1,5 +1,27 @@
 # Connectr frontend tech test
 
+This repo is a basic react app put together with [Vite](https://vitejs.dev/).
+
+At Connectr we use:
+
+- React
+- Styled components
+- Apollo
+- Formik
+- Cypress
+
+Please see this as a potential starting point to your tech test solution but if you feel more more comfortable with another approach / tech stack use that instead. NextJs, Angular, Vue etc.
+You will be judged on the acceptance criteria not on the use of a particular framework / library.
+
+To start the project:
+
+`yarn start`
+
+or
+
+`npm run start`
+
+
 ## About us 👋
 
 Connectr, our onboarding platform, uses a combination of content, quiz-style self assessment and personalisation to help our clients find top talent and our users find great employers. We have big plans for Connectr and are currently building a new version with a shiny new front end. This test is designed to assess the skills we use everyday.
@@ -36,7 +58,7 @@ how any missing requirements could be met.
 - On mobile devices the cards should stack. On tablet devices the cards should be displayed side by side. When the screen width grows very large a margin should appear either side so that the boxes don’t keep getting larger.
 - If there is any information that you feel is missing from the story then please make sensible decisions (for example, size of ‘mobile’, design of ‘highlighted’)- It is ok to use Create React App to get started. Use your judgement on look and feel but it should be easy to use.
 
-https://www.figma.com/file/iscOPEeJBZsdG9qUGOaLxf/Connectr-Tech- Test?node-id=0%3A1
+https://www.figma.com/file/iscOPEeJBZsdG9qUGOaLxf/Connectr-Tech-Test?node-id=0%3A1
 
 ## Criteria for Assessment 📝
 
