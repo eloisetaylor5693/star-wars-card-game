@@ -59,6 +59,8 @@ how any missing requirements could be met.
 
 https://www.figma.com/file/iscOPEeJBZsdG9qUGOaLxf/Connectr-Tech-Test?node-id=0%3A1
 
+This design is a starting point, please add to it to account for accessibility and the requirements of the app where you see fit.
+
 ## Criteria for Assessment 📝
 
 - Coding style, i.e. your approach not whether you use semicolons or not ;)
@@ -73,6 +75,7 @@ https://www.figma.com/file/iscOPEeJBZsdG9qUGOaLxf/Connectr-Tech-Test?node-id=0%3
 ## API Details
 
 REST: https://swapi.dev/
+Alternative: https://www.swapi.tech/
 
 GraphQL: https://connectr-swapi.herokuapp.com/
 
