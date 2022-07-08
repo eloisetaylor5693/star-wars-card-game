@@ -55,7 +55,7 @@ how any missing requirements could be met.
 
 - Cards played by either the user or computer should not have been played before.
 - On mobile devices the cards should stack. On tablet devices the cards should be displayed side by side. When the screen width grows very large a margin should appear either side so that the boxes don’t keep getting larger.
-- If there is any information that you feel is missing from the story then please make sensible decisions (for example, size of ‘mobile’, design of ‘highlighted’)- It is ok to use Create React App to get started. Use your judgement on look and feel but it should be easy to use.
+- If there is any information that you feel is missing from the story then please make sensible decisions (for example, size of ‘mobile’, design of ‘highlighted’). Use your judgement on look and feel but it should be easy to use.
 
 https://www.figma.com/file/iscOPEeJBZsdG9qUGOaLxf/Connectr-Tech-Test?node-id=0%3A1
 
