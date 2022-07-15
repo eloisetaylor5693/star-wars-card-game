@@ -32,7 +32,7 @@ Build a React quiz/game application using the Star Wars API. The rules of the ga
 
 ## Duration ⏰
 
-Spend as much time as is required to demonstrate a solution approach and we expect that this should take 90 minutes or so. Start with the most important requirements first. If you’re short on time, there will be an opportunity at the next stage of the process to talk us through
+Spend as much time as is required to demonstrate a solution approach. Start with the most important requirements first. If you’re short on time, there will be an opportunity at the next stage of the process to talk us through
 how any missing requirements could be met.
 
 ## Requirements (priority order) ✅
