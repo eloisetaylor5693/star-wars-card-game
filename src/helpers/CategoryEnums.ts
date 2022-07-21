@@ -1,7 +1,6 @@
-export enum Categories
-{
-    MAX_SPEED,
-    CREDIT_COST,
-    PASSENGERS,
-    FILM_APPEARANCES
+export enum Categories {
+  MAX_SPEED = "maximumSpeed",
+  CREDIT_COST = "costInCredits",
+  PASSENGERS = "passengerCapacity",
+  FILM_APPEARANCES = "filmAppearances",
 }
