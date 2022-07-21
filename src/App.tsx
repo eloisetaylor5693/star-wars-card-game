@@ -1,68 +1,85 @@
-import { gql, useQuery } from "@apollo/client";
-import React, { ReactEventHandler } from "react";
+import { useQuery } from "@apollo/client";
+import { useMemo, useState } from "react";
 import { AllStarshipsContext } from "./AllStarshipsContext";
 import Board from "./components/Board";
 import Card from "./components/Card";
 import { Categories } from "./helpers/CategoryEnums";
+import { GET_STARSHIPS } from "./helpers/GetStarshipsQuery";
 import MapStarships from "./helpers/MapStarships";
 import Starship from "./Starship";
 
-const GET_STARSHIPS = gql`
-  query root {
-    allStarships {
-      edges {
-        node {
-          id
-          class: starshipClass
-          name
-          passengerCapacity: passengers
-          maximumSpeed: maxAtmospheringSpeed
-          costInCredits
-          filmConnection {
-            filmAppearances: totalCount
-          }
-        }
-      }
-    }
-  }
-`;
-
 function App() {
+  const [isLoadingPage, setIsLoadingPage] = useState<boolean>(true);
+  const [starships, setStarships] = useState<Starship[]>([]);
+  const [playerOneCard, setPlayerOneCard] = useState<Starship>();
+  const [playerTwoCard, setPlayerTwoCard] = useState<Starship>();
+
   // getting all spaceships
-  const { loading, error, data } = useQuery(GET_STARSHIPS);
+  const {
+    loading: graphqlQueryIsLoading,
+    error,
+    data,
+  } = useQuery(GET_STARSHIPS);
 
-  // error handling
-  if (loading) return <h1>'Loading...'</h1>;
-  if (error) return <p>`Error! ${error.message}`</p>;
+  useMemo(() => {
+    console.log("getting stars", {
+      isLoading: isLoadingPage,
+      graphqlQueryIsLoading: graphqlQueryIsLoading,
+      playerOneCard: playerOneCard,
+    });
 
-  const allSpaceships = MapStarships(data);
+    if (!isLoadingPage || graphqlQueryIsLoading || playerOneCard) {
+      return;
+    }
 
-  // popping from the array so that we can't accidentally draw a duplicate card
-  const selectedCard = allSpaceships.pop();
-  const spaceshipCardsDealt: Starship[] = [];
+    if (error) {
+      setIsLoadingPage(false);
+      return <p>`Error! ${error.message}`</p>;
+    }
 
-  // TODO: currently just adds card on first load, need to draw the next card
-  spaceshipCardsDealt.push(selectedCard);
+    const allStarships = MapStarships(data);
 
-  const onClickingCategory = (
-    category: Categories,
-    value: any
-  ) => {
-    console.log({category:category, value: value});
+    // popping from the array so that we can't accidentally draw a duplicate card
+    const selectedCard = allStarships.pop();
+
+    setStarships(allStarships);
+
+    if (selectedCard) {
+      setPlayerOneCard(selectedCard);
+    }
+    setIsLoadingPage(false);
+  }, [graphqlQueryIsLoading, isLoadingPage, playerOneCard, starships]);
+
+  const onClickingCategory = (category: Categories, value: any) => {
+    console.log({ category: category, value: value });
+    // const allSpaceshipsContextData: Starship[] =
+    //   React.useContext(AllStarshipsContext);
+
+    const playerTwoSelectedCard = starships.pop();
+    if (playerTwoSelectedCard) {
+      setPlayerTwoCard(playerTwoSelectedCard);
+    }
+    setIsLoadingPage(true);
   };
 
+  if (!playerOneCard || !starships) {
+    return null;
+  }
+
   return (
-    <AllStarshipsContext.Provider value={allSpaceships}>
+    <AllStarshipsContext.Provider value={starships}>
       <Board>
-        {spaceshipCardsDealt.map((x) => {
-          return (
-            <Card
-              key={x.id}
-              starship={x}
-              onClickingCategory={onClickingCategory}
-            />
-          );
-        })}
+        <Card
+          key={playerOneCard?.id}
+          starship={playerOneCard}
+          onClickingCategory={onClickingCategory}
+        />
+
+        {playerTwoCard && <Card
+          key={playerTwoCard?.id}
+          starship={playerTwoCard}
+          onClickingCategory={onClickingCategory}
+        />}
       </Board>
     </AllStarshipsContext.Provider>
   );
