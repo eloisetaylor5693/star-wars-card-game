@@ -15,7 +15,8 @@ Given more time I would...
     - data where it's static and long eg dropdown values
     - the component itself  
 - use relative units out of preference in the CSS, and only use pixels where necessary.
-- normally add tests as I work using frameworks `jest/mocha`, `react testing library`, and `cypress` for e2e tests.   
+- normally add tests as I work using frameworks `jest/mocha`, `react testing library`, and `cypress` for e2e tests.  
+- store the scores using useState for each player. 
 
 
 -------
