@@ -66,7 +66,7 @@ export const Card = ({ starship, ...props }: CardProps): JSX.Element => {
           Passengers: <StarShipStatValue>{starship.passengerCapacity}</StarShipStatValue>
         </StarShipStat>
         <StarShipStat>
-          Film Appearances: <StarShipStatValue>0</StarShipStatValue>
+          Film Appearances: <StarShipStatValue>{starship.filmAppearances}</StarShipStatValue>
         </StarShipStat>
       </StarShipStatsSection>
     </CardContainer>

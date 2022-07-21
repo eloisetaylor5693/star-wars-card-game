@@ -13,6 +13,10 @@ const GET_STARSHIPS = gql`
           name
           passengerCapacity: passengers
           maximumSpeed: maxAtmospheringSpeed
+          costInCredits
+          filmConnection {
+            filmAppearances: totalCount
+          }
         }
       }
     }
@@ -28,12 +32,22 @@ function App() {
   if (error) return <p>`Error! ${error.message}`</p>;
 
   // TODO shuffle array of spaceships
-  const spaceships = data.allStarships.edges;
+  const graphlqlSpaceshipNodes = data.allStarships.edges;
 
+  const allSpaceships = graphlqlSpaceshipNodes.map((x) => {
+    return {
+      ...x.node,
+      
+      // TODO: fix the film connection querying
+      filmAppearances: 0 //x['filmConnection'].totalCount
+    };
+  });
+
+  const selectedCard = allSpaceships[0];
   const spaceshipCardsDealt: Starship[] = [];
 
   // TODO: currently just adds card on first load, need to draw the next card
-  spaceshipCardsDealt.push(spaceships[0].node);
+  spaceshipCardsDealt.push(selectedCard);
 
   return (
     <Board>
