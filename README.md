@@ -7,6 +7,8 @@ I've added some comments throughout the code.
 
 I decided to shuffle the cards before drawing a card then pop a card from the array, so that I don't have to keep track of what cards were drawn to avoid drawing a duplicate card.  
 
+I didn't use a folder structure I would normally use for business apps, to aid you finding the logic that I added.  There's already boiler plate code in the repo to start with, so hopefully this helps you find my workings.  I would generally have a components folder, but I would not use a single folder called `helpers` for all other files that aren't components or config.
+
 Given more time I would...
 - split some code out into separate files as the logic starts to get bigger. 
 - I would pragmatically split out the components into the following files unless the component is super small (save for the files that have to be separate eg test files)
