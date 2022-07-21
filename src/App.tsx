@@ -31,7 +31,7 @@ function App() {
 
   return (
     <Board>
-      <Card>Goodluck and have fun 👍</Card>
+      <Card />
     </Board>
   );
 }

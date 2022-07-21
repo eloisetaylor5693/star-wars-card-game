@@ -21,7 +21,7 @@ const StarShipStatsSection = styled.div`
   height: 100%;
 `;
 
-export const Card = () => {
+export const Card = (): JSX.Element => {
   return (
     <CardContainer>
       <CardHeading>
