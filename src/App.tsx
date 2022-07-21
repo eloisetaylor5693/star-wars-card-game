@@ -36,12 +36,6 @@ function App() {
   } = useQuery(GET_STARSHIPS);
 
   useMemo(() => {
-    console.log("getting stars", {
-      isLoading: isLoadingPage,
-      graphqlQueryIsLoading: graphqlQueryIsLoading,
-      playerOneCard: playerOneCard,
-    });
-
     if (!isLoadingPage || graphqlQueryIsLoading || playerOneCard) {
       return;
     }
@@ -65,7 +59,6 @@ function App() {
   }, [graphqlQueryIsLoading, isLoadingPage, playerOneCard, starships]);
 
   const onClickingCategory = (category: Categories, value: any) => {
-    console.log({ category: category, value: value });
     const playerTwoSelectedCard = starships.pop();
     if (playerTwoSelectedCard) {
       setPlayerTwoCard(playerTwoSelectedCard);
