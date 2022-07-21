@@ -3,7 +3,9 @@
 
 ## Candidate notes:
 
- I've added comments throughout the code.
+I've added some comments throughout the code.
+
+I decided to shuffle the cards before drawing a card then pop a card from the array, so that I don't have to keep track of what cards were drawn to avoid drawing a duplicate card.  
 
 Given more time I would...
 - split some code out into separate files as the logic starts to get bigger. 
