@@ -37,7 +37,7 @@ const StarShipStat = styled.div`
 `;
 
 const StarShipStatValue = styled.span`
-  text-align:end
+  text-align: end;
 `;
 
 interface CardProps {
@@ -59,16 +59,26 @@ export const Card = ({ starship, ...props }: CardProps): JSX.Element => {
       />
       <StarShipStatsSection>
         <StarShipStat>
-          Max Speed: <StarShipStatValue>{starship.maximumSpeed}</StarShipStatValue>
+          Max Speed:{" "}
+          <StarShipStatValue>{starship?.maximumSpeed || "?"}</StarShipStatValue>
         </StarShipStat>
         <StarShipStat>
-          Credit Cost: <StarShipStatValue>{starship.costInCredits}</StarShipStatValue>
+          Credit Cost:{" "}
+          <StarShipStatValue>
+            {starship?.costInCredits || "?"}
+          </StarShipStatValue>
         </StarShipStat>
         <StarShipStat>
-          Passengers: <StarShipStatValue>{starship.passengerCapacity}</StarShipStatValue>
+          Passengers:{" "}
+          <StarShipStatValue>
+            {starship?.passengerCapacity || "?"}
+          </StarShipStatValue>
         </StarShipStat>
         <StarShipStat>
-          Film Appearances: <StarShipStatValue>{starship.filmAppearances}</StarShipStatValue>
+          Film Appearances:{" "}
+          <StarShipStatValue>
+            {starship?.filmAppearances || "?"}
+          </StarShipStatValue>
         </StarShipStat>
       </StarShipStatsSection>
     </CardContainer>
