@@ -4,6 +4,7 @@ import { AllStarshipsContext } from "./AllStarshipsContext";
 import Board from "./components/Board";
 import Card from "./components/Card";
 import { Categories } from "./helpers/CategoryEnums";
+import MapStarships from "./helpers/MapStarships";
 import Starship from "./Starship";
 
 const GET_STARSHIPS = gql`
@@ -34,21 +35,7 @@ function App() {
   if (loading) return <h1>'Loading...'</h1>;
   if (error) return <p>`Error! ${error.message}`</p>;
 
-  const graphlqlSpaceshipNodes = data.allStarships.edges;
-
-  const allSpaceships = graphlqlSpaceshipNodes
-    .map((x) => {
-      return {
-        ...x.node,
-
-        // TODO: fix the film connection querying (filmConnection is undefined)
-        filmAppearances: 0, //x['filmConnection'].totalCount
-      };
-    })
-    // shuffling array
-    .sort(() => {
-      return 0.5 - Math.random();
-    });
+  const allSpaceships = MapStarships(data);
 
   // popping from the array so that we can't accidentally draw a duplicate card
   const selectedCard = allSpaceships.pop();
