@@ -39,7 +39,7 @@ function App() {
     return {
       ...x.node,
 
-      // TODO: fix the film connection querying
+      // TODO: fix the film connection querying (filmConnection is undefined)
       filmAppearances: 0, //x['filmConnection'].totalCount
     };
   });
