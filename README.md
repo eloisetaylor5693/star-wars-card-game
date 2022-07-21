@@ -3,14 +3,19 @@
 
 ## Candidate notes:
 
-I would split some code out into separate files as the logic starts to get bigger.  I've added TODO's throughout the code.  
+ I've added comments throughout the code.
 
-I would use relative units out of preference in the CSS, and only use pixels where necessary.
-
-I would use `useContext` to share the scores and other global data to the relevant child component.  
-
-I would normally add tests as I work using frameworks `jest/mocha`, `react testing library`, and `cypress` for e2e tests.   
-
+Given more time I would...
+- split some code out into separate files as the logic starts to get bigger. 
+- I would pragmatically split out the components into the following files unless the component is super small (save for the files that have to be separate eg test files)
+    - styling
+    - types
+    - tests
+    - storybook config
+    - data where it's static and long eg dropdown values
+    - the component itself  
+- use relative units out of preference in the CSS, and only use pixels where necessary.
+- normally add tests as I work using frameworks `jest/mocha`, `react testing library`, and `cypress` for e2e tests.   
 
 
 -------
