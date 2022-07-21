@@ -1,4 +1,5 @@
-export interface Starship {
+export default interface Starship {
+    id: string;
     name: string;
     class: string;
     maximumSpeed: string;
@@ -6,5 +7,5 @@ export interface Starship {
     passengerCapacity: number;
 
     /** The total number of films featuring the Starship */
-    filmAppearances: number
+    filmAppearances?: number
 }

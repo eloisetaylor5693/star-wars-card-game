@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Starship from "../Starship";
 
 const CardContainer = styled.div`
   display: flex;
@@ -21,11 +22,15 @@ const StarShipStatsSection = styled.div`
   height: 100%;
 `;
 
-export const Card = (): JSX.Element => {
+interface CardProps {
+  starship: Starship;
+}
+
+export const Card = ({ starship, ...props }: CardProps): JSX.Element => {
   return (
-    <CardContainer>
+    <CardContainer {...props}>
       <CardHeading>
-        <p>A Starship</p>
+        <p>{starship.name}</p>
       </CardHeading>
 
       <img
