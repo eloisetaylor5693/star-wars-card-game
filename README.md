@@ -16,7 +16,9 @@ Given more time I would...
     - the component itself  
 - use relative units out of preference in the CSS, and only use pixels where necessary.
 - normally add tests as I work using frameworks `jest/mocha`, `react testing library`, and `cypress` for e2e tests.  
-- store the scores using useState for each player. 
+- store the scores using useState for each player.
+- fix the card styling so it doesn't jump when picking a category on smaller devices.
+- add a button to start the next set, so the user can see the score of the current game, and then continue on to draw a fresh card.  
 
 
 -------
