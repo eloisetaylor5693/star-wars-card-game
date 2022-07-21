@@ -44,7 +44,7 @@ const StarShipStatValue = styled.span`
 
 interface CardProps {
   starship: Starship;
-  onClickingCategory: (category: Categories, value: any) => void;
+  onClickingCategory?: (category: Categories, value: any) => void;
 }
 
 export const Card = ({

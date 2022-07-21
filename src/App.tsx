@@ -95,11 +95,7 @@ function App() {
         />
 
         {playerTwoCard && (
-          <Card
-            key={playerTwoCard?.id}
-            starship={playerTwoCard}
-            onClickingCategory={onClickingCategory}
-          />
+          <Card key={playerTwoCard?.id} starship={playerTwoCard} />
         )}
       </CardSection>
     </Board>
