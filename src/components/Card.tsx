@@ -49,7 +49,7 @@ interface CardProps {
 
 export const Card = ({
   starship,
-  onClickingCategory,
+  onClickingCategory = () => {},
   ...props
 }: CardProps): JSX.Element => {
   return (
