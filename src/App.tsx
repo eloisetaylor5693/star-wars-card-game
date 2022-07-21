@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import { AllStarshipsContext } from "./AllStarshipsContext";
 import Board from "./components/Board";
 import Card from "./components/Card";
 import Starship from "./Starship";
@@ -37,9 +38,9 @@ function App() {
   const allSpaceships = graphlqlSpaceshipNodes.map((x) => {
     return {
       ...x.node,
-      
+
       // TODO: fix the film connection querying
-      filmAppearances: 0 //x['filmConnection'].totalCount
+      filmAppearances: 0, //x['filmConnection'].totalCount
     };
   });
 
@@ -50,11 +51,13 @@ function App() {
   spaceshipCardsDealt.push(selectedCard);
 
   return (
-    <Board>
-      {spaceshipCardsDealt.map((x) => {
-        return <Card key={x.id} starship={x} />;
-      })}
-    </Board>
+    <AllStarshipsContext.Provider value={allSpaceships}>
+      <Board>
+        {spaceshipCardsDealt.map((x) => {
+          return <Card key={x.id} starship={x} />;
+        })}
+      </Board>
+    </AllStarshipsContext.Provider>
   );
 }
 
