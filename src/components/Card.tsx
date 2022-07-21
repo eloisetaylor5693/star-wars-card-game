@@ -65,50 +65,26 @@ export const Card = ({
         height="180px"
       />
       <StarShipStatsSection>
-        <StarShipStat
-          onClick={() =>
-            onClickingCategory(
-              Categories.MAX_SPEED,
-              starship?.maximumSpeed ?? 0
-            )
-          }
-        >
+        <StarShipStat onClick={() => onClickingCategory(Categories.MAX_SPEED)}>
           Max Speed:{" "}
           <StarShipStatValue>{starship?.maximumSpeed || "?"}</StarShipStatValue>
         </StarShipStat>
         <StarShipStat
-          onClick={() =>
-            onClickingCategory(
-              Categories.CREDIT_COST,
-              starship?.costInCredits ?? 0
-            )
-          }
+          onClick={() => onClickingCategory(Categories.CREDIT_COST)}
         >
           Credit Cost:{" "}
           <StarShipStatValue>
             {starship?.costInCredits || "?"}
           </StarShipStatValue>
         </StarShipStat>
-        <StarShipStat
-          onClick={() =>
-            onClickingCategory(
-              Categories.PASSENGERS,
-              starship?.passengerCapacity ?? 0
-            )
-          }
-        >
+        <StarShipStat onClick={() => onClickingCategory(Categories.PASSENGERS)}>
           Passengers:{" "}
           <StarShipStatValue>
             {starship?.passengerCapacity || "?"}
           </StarShipStatValue>
         </StarShipStat>
         <StarShipStat
-          onClick={() =>
-            onClickingCategory(
-              Categories.FILM_APPEARANCES,
-              starship?.filmAppearances ?? 0
-            )
-          }
+          onClick={() => onClickingCategory(Categories.FILM_APPEARANCES)}
         >
           Film Appearances:{" "}
           <StarShipStatValue>
