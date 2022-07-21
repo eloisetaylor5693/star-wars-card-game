@@ -7,7 +7,7 @@ import { Categories } from "./helpers/CategoryEnums";
 import CompareCategoryValues from "./helpers/CompareCategoryValues";
 import { GET_STARSHIPS } from "./helpers/GetStarshipsQuery";
 import MapStarships from "./helpers/MapStarships";
-import Starship from "./Starship";
+import Starship from "./helpers/Starship";
 
 const CardSection = styled.div`
   display: flex;

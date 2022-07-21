@@ -1,4 +1,4 @@
-import Starship from "../Starship";
+import Starship from "./Starship";
 import { Categories } from "./CategoryEnums";
 
 const CompareCategoryValues = (

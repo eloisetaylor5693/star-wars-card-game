@@ -1,4 +1,4 @@
-import Starship from "../Starship";
+import Starship from "./Starship";
 
 export const MapStarships = (data): Starship[] => {
   const graphQlNodes = data.allStarships.edges;

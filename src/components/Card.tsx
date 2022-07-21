@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Categories } from "../helpers/CategoryEnums";
-import Starship from "../Starship";
+import Starship from "../helpers/Starship";
 
 // TODO: split stylings into separate file
 
