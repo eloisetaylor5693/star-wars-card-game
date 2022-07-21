@@ -58,7 +58,7 @@ function App() {
     setIsLoadingPage(false);
   }, [graphqlQueryIsLoading, isLoadingPage, playerOneCard, starships]);
 
-  const onClickingCategory = (category: Categories, value: any) => {
+  const onClickingCategory = (category: Categories) => {
     const playerTwoSelectedCard = starships.pop();
     if (playerTwoSelectedCard) {
       setPlayerTwoCard(playerTwoSelectedCard);
