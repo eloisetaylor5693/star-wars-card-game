@@ -32,19 +32,24 @@ function App() {
   if (loading) return <h1>'Loading...'</h1>;
   if (error) return <p>`Error! ${error.message}`</p>;
 
-  // TODO shuffle array of spaceships
   const graphlqlSpaceshipNodes = data.allStarships.edges;
 
-  const allSpaceships = graphlqlSpaceshipNodes.map((x) => {
-    return {
-      ...x.node,
+  const allSpaceships = graphlqlSpaceshipNodes
+    .map((x) => {
+      return {
+        ...x.node,
 
-      // TODO: fix the film connection querying (filmConnection is undefined)
-      filmAppearances: 0, //x['filmConnection'].totalCount
-    };
-  });
+        // TODO: fix the film connection querying (filmConnection is undefined)
+        filmAppearances: 0, //x['filmConnection'].totalCount
+      };
+    })
+    // shuffling array
+    .sort(() => {
+      return 0.5 - Math.random();
+    });
 
-  const selectedCard = allSpaceships[0];
+  // popping from the array so that we can't accidentally draw a duplicate card
+  const selectedCard = allSpaceships.pop();
   const spaceshipCardsDealt: Starship[] = [];
 
   // TODO: currently just adds card on first load, need to draw the next card
