@@ -1,7 +1,9 @@
 import { gql, useQuery } from "@apollo/client";
+import React, { ReactEventHandler } from "react";
 import { AllStarshipsContext } from "./AllStarshipsContext";
 import Board from "./components/Board";
 import Card from "./components/Card";
+import { Categories } from "./helpers/CategoryEnums";
 import Starship from "./Starship";
 
 const GET_STARSHIPS = gql`
@@ -55,11 +57,24 @@ function App() {
   // TODO: currently just adds card on first load, need to draw the next card
   spaceshipCardsDealt.push(selectedCard);
 
+  const onClickingCategory = (
+    category: Categories,
+    value: any
+  ) => {
+    console.log({category:category, value: value});
+  };
+
   return (
     <AllStarshipsContext.Provider value={allSpaceships}>
       <Board>
         {spaceshipCardsDealt.map((x) => {
-          return <Card key={x.id} starship={x} />;
+          return (
+            <Card
+              key={x.id}
+              starship={x}
+              onClickingCategory={onClickingCategory}
+            />
+          );
         })}
       </Board>
     </AllStarshipsContext.Provider>

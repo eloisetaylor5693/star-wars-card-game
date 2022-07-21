@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Categories } from "../helpers/CategoryEnums";
 import Starship from "../Starship";
 
 // TODO: split stylings into separate file
@@ -22,18 +23,19 @@ const StarShipStatsSection = styled.div`
   padding: 0.5rem 2rem;
   background-color: white;
   height: 100%;
-  div:first-child {
+  button:first-child {
     margin-top: 1.5rem;
   }
 `;
 
-const StarShipStat = styled.div`
+const StarShipStat = styled.button`
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 1rem;
   background-color: #ffc625;
   margin-bottom: 1.5rem;
   border-radius: 0.5rem;
+  width: 100%;
 `;
 
 const StarShipStatValue = styled.span`
@@ -42,9 +44,14 @@ const StarShipStatValue = styled.span`
 
 interface CardProps {
   starship: Starship;
+  onClickingCategory: (category: Categories, value: any) => void;
 }
 
-export const Card = ({ starship, ...props }: CardProps): JSX.Element => {
+export const Card = ({
+  starship,
+  onClickingCategory,
+  ...props
+}: CardProps): JSX.Element => {
   return (
     <CardContainer {...props}>
       <CardHeading>
@@ -58,23 +65,51 @@ export const Card = ({ starship, ...props }: CardProps): JSX.Element => {
         height="180px"
       />
       <StarShipStatsSection>
-        <StarShipStat>
+        <StarShipStat
+          onClick={() =>
+            onClickingCategory(
+              Categories.MAX_SPEED,
+              starship?.maximumSpeed ?? 0
+            )
+          }
+        >
           Max Speed:{" "}
           <StarShipStatValue>{starship?.maximumSpeed || "?"}</StarShipStatValue>
         </StarShipStat>
-        <StarShipStat>
+        <StarShipStat
+          onClick={() =>
+            onClickingCategory(
+              Categories.CREDIT_COST,
+              starship?.costInCredits ?? 0
+            )
+          }
+        >
           Credit Cost:{" "}
           <StarShipStatValue>
             {starship?.costInCredits || "?"}
           </StarShipStatValue>
         </StarShipStat>
-        <StarShipStat>
+        <StarShipStat
+          onClick={() =>
+            onClickingCategory(
+              Categories.PASSENGERS,
+              starship?.passengerCapacity ?? 0
+            )
+          }
+        >
           Passengers:{" "}
           <StarShipStatValue>
             {starship?.passengerCapacity || "?"}
           </StarShipStatValue>
         </StarShipStat>
-        <StarShipStat>
+        <StarShipStat
+          onClick={() =>
+            onClickingCategory(
+              Categories.FILM_APPEARANCES,
+              starship?.filmAppearances ?? 0
+            )
+          }
+        >
           Film Appearances:{" "}
           <StarShipStatValue>
             {starship?.filmAppearances || "?"}
