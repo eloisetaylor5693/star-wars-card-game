@@ -86,26 +86,24 @@ function App() {
   }
 
   return (
-    <AllStarshipsContext.Provider value={starships}>
-      <Board>
-        {gameResult && <GameResulText>{gameResult}</GameResulText>}
-        <CardSection>
+    <Board>
+      {gameResult && <GameResulText>{gameResult}</GameResulText>}
+      <CardSection>
+        <Card
+          key={playerOneCard?.id}
+          starship={playerOneCard}
+          onClickingCategory={onClickingCategory}
+        />
+
+        {playerTwoCard && (
           <Card
-            key={playerOneCard?.id}
-            starship={playerOneCard}
+            key={playerTwoCard?.id}
+            starship={playerTwoCard}
             onClickingCategory={onClickingCategory}
           />
-
-          {playerTwoCard && (
-            <Card
-              key={playerTwoCard?.id}
-              starship={playerTwoCard}
-              onClickingCategory={onClickingCategory}
-            />
-          )}
-        </CardSection>
-      </Board>
-    </AllStarshipsContext.Provider>
+        )}
+      </CardSection>
+    </Board>
   );
 }
 
