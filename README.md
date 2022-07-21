@@ -5,11 +5,11 @@
 
 I would split some code out into separate files as the logic starts to get bigger.  I've added TODO's throughout the code.  
 
-For layout of the cards as they get drawn, I would use flexbox settings: `space-between`, `wrap`, and set a sensible `gap` so between the cards are consistent width appart vertically and horizontally.
-
 I would use relative units out of preference in the CSS, and only use pixels where necessary.
 
 I would use `useContext` to share the scores and other global data to the relevant child component.  
+
+I would normally add tests as I work using frameworks `jest/mocha`, `react testing library`, and `cypress` for e2e tests.   
 
 
 
