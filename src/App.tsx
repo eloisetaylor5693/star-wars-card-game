@@ -52,9 +52,6 @@ function App() {
 
   const onClickingCategory = (category: Categories, value: any) => {
     console.log({ category: category, value: value });
-    // const allSpaceshipsContextData: Starship[] =
-    //   React.useContext(AllStarshipsContext);
-
     const playerTwoSelectedCard = starships.pop();
     if (playerTwoSelectedCard) {
       setPlayerTwoCard(playerTwoSelectedCard);
