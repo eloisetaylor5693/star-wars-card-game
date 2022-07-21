@@ -27,8 +27,7 @@ function App() {
   if (loading) return <h1>'Loading...'</h1>;
   if (error) return <p>`Error! ${error.message}`</p>;
 
-  // TODO
-  // shuffle array of spaceships
+  // TODO shuffle array of spaceships
   const spaceships = data.allStarships.edges;
 
   const spaceshipCardsDealt: Starship[] = [];
