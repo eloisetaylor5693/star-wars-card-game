@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Starship from "../Starship";
 
+// TODO: split stylings into separate file
+
 const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
