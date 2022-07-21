@@ -1,7 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { useMemo, useState } from "react";
 import styled from "styled-components";
-import { AllStarshipsContext } from "./AllStarshipsContext";
 import Board from "./components/Board";
 import Card from "./components/Card";
 import { Categories } from "./helpers/CategoryEnums";
