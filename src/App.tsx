@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Board from "./components/Board";
 import Card from "./components/Card";
@@ -35,14 +35,14 @@ function App() {
     data,
   } = useQuery(GET_STARSHIPS);
 
-  useMemo(() => {
+  useEffect(() => {
     if (!isLoadingPage || graphqlQueryIsLoading || playerOneCard) {
       return;
     }
 
     if (error) {
       setIsLoadingPage(false);
-      return <p>`Error! ${error.message}`</p>;
+      return;
     }
 
     const allStarships = MapStarships(data);
@@ -55,6 +55,7 @@ function App() {
     if (selectedCard) {
       setPlayerOneCard(selectedCard);
     }
+
     setIsLoadingPage(false);
   }, [graphqlQueryIsLoading, isLoadingPage, playerOneCard, starships]);
 
@@ -79,6 +80,8 @@ function App() {
 
   return (
     <Board>
+      {error && <p>`Error! ${error.message}`</p>}
+      {isLoadingPage && <p>`Loading...`</p>}
       {gameResult && <GameResulText>{gameResult}</GameResulText>}
       <CardSection>
         <Card
