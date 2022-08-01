@@ -15,7 +15,7 @@ const CardContainer = styled.div`
 `;
 
 const CardHeading = styled.div`
-  padding: 0.5rem 2rem;
+  padding: 1.5rem 2rem;
   background-color: #ffc625;
 `;
 
@@ -55,7 +55,7 @@ export const Card = ({
   return (
     <CardContainer {...props}>
       <CardHeading>
-        <p>{starship.name}</p>
+        {starship.name}
       </CardHeading>
 
       <img
@@ -64,6 +64,7 @@ export const Card = ({
         width="320px"
         height="180px"
       />
+
       <StarShipStatsSection>
         <StarShipStat onClick={() => onClickingCategory(Categories.MAX_SPEED)}>
           Max Speed:{" "}
