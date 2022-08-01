@@ -66,6 +66,10 @@ export const Card = ({
       />
 
       <StarShipStatsSection>
+        {/* 
+          this section is repetetive, would likely extract to component/ function 
+          especially since these StarShipStat elements have considerable styling
+        */}
         <StarShipStat onClick={() => onClickingCategory(Categories.MAX_SPEED)}>
           Max Speed:{" "}
           <StarShipStatValue>{starship?.maximumSpeed || "?"}</StarShipStatValue>
