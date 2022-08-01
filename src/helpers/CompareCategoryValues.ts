@@ -1,6 +1,11 @@
 import Starship from "./Starship";
 import { Categories } from "./CategoryEnums";
 
+
+
+// in order to plugin to the scoring, should return a value not the 
+// string presented to the user, another function can map the user-presented values
+//      return enum
 const CompareCategoryValues = (
   category: Categories,
   playerOneCard: Starship | undefined,
